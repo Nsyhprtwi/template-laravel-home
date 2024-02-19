@@ -1,6 +1,6 @@
 @extends('home.master')
 
-@section('title', 'Tambah Data Spp')
+@section('title', 'Tambah Data Kelas')
 
 @section('content')
 <div class="row">
@@ -10,20 +10,20 @@
     <div class="card card-primary">
       <!-- /.card-header -->
       <!-- form start -->
-      <form action="{{ route('spp.store') }}" method="POST">
+      <form action="{{ route('kelas.store') }}" method="POST">
         @csrf
         <div class="card-body">
           <div class="form-group">
-            <label for="tahun">Tahun</label>
-            <input name="tahun" type="number" min="2000" class="form-control @error('tahun') {{ 'is-invalid' }} @enderror" id="tahun"  placeholder="tahun">
+            <label for="nama_kelas">Nama Kelas</label>
+            <input name="nama_kelas" type="text" min="2000" class="form-control @error('nama_kelas') {{ 'is-invalid' }} @enderror" id="nama_kelas"  placeholder="nama_kelas">
           </div>
-          @error('tahun')
+          @error('nama_kelas')
             <span id="terms-error" class="error invalid-feedback" style="display: inline;">{{ $message }}</span>
           @enderror
-             <label for="nominal">Nominal</label>
-             <input name="nominal" type="number" min="10000" class="form-control @error('nominal') {{ 'is-invalid' }} @enderror" id="nominal"  placeholder="Nominal">
+             <label for="kopetensi_keahlian">Kopetensi Keahlian</label>
+             <input name="kopetensi_keahlian" type="text" min="10000" class="form-control @error('kopetensi_keahlian') {{ 'is-invalid' }} @enderror" id="kopetensi_keahlian"  placeholder="kopetensi_keahlian">
       </div>
-      @error('nominal')
+      @error('kopetensi_keahlian')
         <span id="terms-error" class="error invalid-feedback" style="display: inline;">{{ $message }}</span>
       @enderror
     </div>
